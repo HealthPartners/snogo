@@ -1,5 +1,7 @@
 # Snogo
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/HealthPartnersOSS/snogo)](https://goreportcard.com/report/github.com/HealthPartnersOSS/snogo)
+
 A Prometheus webhook receiver that generates ServiceNow incidents.
 
 ## Getting Started
