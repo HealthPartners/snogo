@@ -1,6 +1,6 @@
 # Snogo
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/HealthPartnersOSS/snogo)](https://goreportcard.com/report/github.com/HealthPartnersOSS/snogo)[!https://api.travis-ci.org/HealthPartnersOSS/snogo.svg?branch=master](https://travis-ci.org/HealthPartnersOSS/snogo/)
+[![Go Report Card](https://goreportcard.com/badge/github.com/HealthPartnersOSS/snogo)](https://goreportcard.com/report/github.com/HealthPartnersOSS/snogo)[![Build Status](https://api.travis-ci.org/HealthPartnersOSS/snogo.svg?branch=master)](https://travis-ci.org/HealthPartnersOSS/snogo/)
 
 A Prometheus webhook receiver that generates ServiceNow incidents.
 
