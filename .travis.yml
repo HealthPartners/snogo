@@ -1,13 +1,21 @@
 language: go
-
 go:
-    - "1.10"
-
+- '1.10'
 before_install:
-  - go get -t -v ./...
-
+- go get -t -v ./...
 script:
-  - go test -race -coverprofile=coverage.txt -covermode=atomic
-
+- go test -race -coverprofile=coverage.txt -covermode=atomic
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.io/bash)
+- CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags "-w" -tags netgo -a -o "snogo"
+- chmod +x snogo
+- tar czvf "snogo-$TRAVIS_CI.tar.gz" snogo
+deploy:
+  provider: releases
+  api_key:
+    secure: COHFAHqDC92fMHmoTbMK4YXYTyl4nOQGPHq7tpdksc8wRE0qUBNFraZbHvrn6pYQz4yM79Mb/zm0+U9rBKFyNuf20Md6jQORN9h9wjNPn7lntM1b6cXh2Nb6Kno0BnQC3JHKBDQr2mf4PV1AGnJuO+xT51Es3U7nvUbcS8+H9auME9Svqa4R+0MjIVhewLSp9pvzHoWv55m55YES7axUWTbEWQbB5sYi2KIvWdugpDJp0DZ33xf3Vt+V2Fmd7LO4XhGumR4NJL2Or2vEElI1IubWcWGrdmUf+ATGBvtmjdWdGIuGZZxhsd7J43f1sDV1o0wIm2saUqbfUdKRZZNht42SYxX+6QNmVR8/wu0IfDoihKplBC1wtBsTNiE0aCR9OUBTbhdwdhigjEhiWYQr/1TE6ZnUGIImcqD6jlTJDoVeGIlfWmlhNYLPRrvtXCNDO39iDz/QSzSwFlpsJaleBRubN7WR6SYC4q+sTu4hh9fORxzXmcYiA9sSKIUvSEWiP00ByVi5p3r0duPNkSSIWo9dy8hWCShA9ioE6UXef9m/ZvoMuGUBfJoELU0u6h2JH9l4yf8TOKfKB11O7vlOocujtVlyNS3dhe05Xl//j8oja/FgCGHDh4t1pAJtoDmrPRB/0dc969vq6WKBQWjmZBK52AL9tLc12yffxi+W8CU=
+  file: "snogo-$TRAVIS_CI.tar.gz"
+  on:
+    repo: HealthPartnersOSS/snogo
+    tags: true
+    branch: master
