@@ -1,6 +1,6 @@
 # Snogo
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/HealthPartnersOSS/snogo)](https://goreportcard.com/report/github.com/HealthPartnersOSS/snogo)[![Build Status](https://api.travis-ci.org/HealthPartnersOSS/snogo.svg?branch=master)](https://travis-ci.org/HealthPartnersOSS/snogo/)[![codecov.io](https://codecov.io/github/HealthPartnersOSS/snogo/coverage.svg?branch=master)](https://codecov.io/github/HealthPartnersOSS/snogo?branch=master)
+[![Go Report Card](https://goreportcard.com/badge/github.com/HealthPartnersOSS/snogo)](https://goreportcard.com/report/github.com/HealthPartnersOSS/snogo)[![Maintainability](https://api.codeclimate.com/v1/badges/a6ffbd7f929997c28b9c/maintainability)](https://codeclimate.com/github/HealthPartnersOSS/snogo)[![Build Status](https://api.travis-ci.org/HealthPartnersOSS/snogo.svg?branch=master)](https://travis-ci.org/HealthPartnersOSS/snogo/)[![codecov.io](https://codecov.io/github/HealthPartnersOSS/snogo/coverage.svg?branch=master)](https://codecov.io/github/HealthPartnersOSS/snogo?branch=master)
 [![MIT License](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 
 A Prometheus webhook receiver that generates ServiceNow incidents.
