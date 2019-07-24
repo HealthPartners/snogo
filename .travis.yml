@@ -7,7 +7,7 @@ script:
 - go test -race -coverprofile=coverage.txt -covermode=atomic
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-- CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags "-w" -tags netgo -a -o "snogo"
+- CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -ldflags "-w" -tags netgo -a -o "snogo" ./cmd/snogo/
 - chmod +x snogo
 - tar czvf "snogo-$TRAVIS_TAG.linux-amd64.tar.gz" snogo
 deploy:
